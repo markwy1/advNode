@@ -1,0 +1,13 @@
+{
+  "name": "advNode",
+  "title": "advNode",
+  "description": "advNode dependencies",
+  "license": "MIT", 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markwy1/advNode.git"
+  },
+  "devDependencies": { 
+    "jasmine-node": ""
+  }
+}
