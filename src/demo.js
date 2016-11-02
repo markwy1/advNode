@@ -82,8 +82,29 @@ myCar2.honk();
 //   return new F();
 // };
 
-//p22-1
+//p22-1=========================
 // vehicle is an object instance, not a prototype
+// var vehicle = {};
+// // not use prototype before drive
+// vehicle.drive = function () {
+// console.log('vrooom...');
+// };
+
+// //direct inherient from an instance vehicle
+// var car = Object.create(vehicle);
+// // car's own method
+// car.honk = function() {
+// console.log('honk honk');
+// };
+
+// // inherient again
+// var myCar = Object.create(car);
+
+// myCar.honk(); // outputs "honk honk"
+// myCar.drive(); // outputs "vrooom..."
+
+//p22-2========================
+//vehicle is an object instance, not a prototype
 var vehicle = {};
 // not use prototype before drive
 vehicle.drive = function () {
@@ -97,8 +118,11 @@ car.honk = function() {
 console.log('honk honk');
 };
 
+var myVehicle = Object.create(vehicle);
+
+myVehicle.drive();
 // inherient again
 var myCar = Object.create(car);
-
 myCar.honk(); // outputs "honk honk"
 myCar.drive(); // outputs "vrooom..."
+
