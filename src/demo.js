@@ -73,11 +73,32 @@ myCar2.honk();
 // myCar.drive(); // outputs "vrooom..."
 
 // p22 =================
-Object.create = function(o) {
-  // F is a temparary object, now empty;
-  var F = function() {};
-  // assign F with o, o is a real object;
-  F.prototype = o;
-  // return a F's instance 
-  return new F();
+// Object.create = function(o) {
+//   // F is a temparary object, now empty;
+//   var F = function() {};
+//   // assign F with o, o is a real object;
+//   F.prototype = o;
+//   // return a F's instance 
+//   return new F();
+// };
+
+//p22-1
+// vehicle is an object instance, not a prototype
+var vehicle = {};
+// not use prototype before drive
+vehicle.drive = function () {
+console.log('vrooom...');
 };
+
+//direct inherient from an instance vehicle
+var car = Object.create(vehicle);
+// car's own method
+car.honk = function() {
+console.log('honk honk');
+};
+
+// inherient again
+var myCar = Object.create(car);
+
+myCar.honk(); // outputs "honk honk"
+myCar.drive(); // outputs "vrooom..."
